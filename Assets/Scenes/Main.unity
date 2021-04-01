@@ -2942,7 +2942,7 @@ PrefabInstance:
     - target: {fileID: 3232551794376143260, guid: 9b941439ed61dda458a41b47d6f1b413,
         type: 3}
       propertyPath: surnames.Array.size
-      value: 3
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3232551794376143260, guid: 9b941439ed61dda458a41b47d6f1b413,
         type: 3}
@@ -2958,6 +2958,41 @@ PrefabInstance:
         type: 3}
       propertyPath: surnames.Array.data[2]
       value: Kenna
+      objectReference: {fileID: 0}
+    - target: {fileID: 3232551794376143260, guid: 9b941439ed61dda458a41b47d6f1b413,
+        type: 3}
+      propertyPath: surnames.Array.data[3]
+      value: Mirabilis
+      objectReference: {fileID: 0}
+    - target: {fileID: 3232551794376143260, guid: 9b941439ed61dda458a41b47d6f1b413,
+        type: 3}
+      propertyPath: surnames.Array.data[4]
+      value: Khan
+      objectReference: {fileID: 0}
+    - target: {fileID: 3232551794376143260, guid: 9b941439ed61dda458a41b47d6f1b413,
+        type: 3}
+      propertyPath: surnames.Array.data[5]
+      value: Nacht
+      objectReference: {fileID: 0}
+    - target: {fileID: 3232551794376143260, guid: 9b941439ed61dda458a41b47d6f1b413,
+        type: 3}
+      propertyPath: surnames.Array.data[6]
+      value: the Pious
+      objectReference: {fileID: 0}
+    - target: {fileID: 3232551794376143260, guid: 9b941439ed61dda458a41b47d6f1b413,
+        type: 3}
+      propertyPath: surnames.Array.data[7]
+      value: Ney
+      objectReference: {fileID: 0}
+    - target: {fileID: 3232551794376143260, guid: 9b941439ed61dda458a41b47d6f1b413,
+        type: 3}
+      propertyPath: surnames.Array.data[8]
+      value: Bolingbroke
+      objectReference: {fileID: 0}
+    - target: {fileID: 3232551794376143260, guid: 9b941439ed61dda458a41b47d6f1b413,
+        type: 3}
+      propertyPath: surnames.Array.data[9]
+      value: the Terrible
       objectReference: {fileID: 0}
     - target: {fileID: 3232551794376143260, guid: 9b941439ed61dda458a41b47d6f1b413,
         type: 3}

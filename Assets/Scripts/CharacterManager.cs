@@ -30,7 +30,7 @@ public class CharacterManager : MonoBehaviour
     private void GenerateCharacter()
     {
         CharacterData cd = new CharacterData();
-        bool male = Random.Range(0, 2) >= 1;
+        cd.gender = Random.Range(0, 2) >= 1 ? Gender.Male : Gender.Female;
         characters.Add(cd);
         AssignRandomName(cd);
         for(int i = 0; i < 2; i++)
