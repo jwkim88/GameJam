@@ -41,6 +41,15 @@ public class UI_WaitingRoomPanel : MonoBehaviour
         }
     }
 
+    public void UpdateCharacterFadeState()
+    {
+        for(int i = 0; i < characters.Count; i++)
+        {
+            characters[i].UpdateFade();
+            characters[i].UpdateTimeText();
+        }
+    }
+
     public void OnCharacterSelected(CharacterData cd)
     {
         gm.OnCharacterSelected(cd);

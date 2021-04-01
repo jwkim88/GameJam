@@ -10,6 +10,7 @@ public class UI_OfficePanel : MonoBehaviour
     [SerializeField] protected TextMeshProUGUI yearCounter;
     [SerializeField] protected TextMeshProUGUI heavenAvailability;
     [SerializeField] protected TextMeshProUGUI hellAvailability;
+    [SerializeField] protected TextMeshProUGUI karmicBalance;
 
     public void UpdateYear(int year)
     {
@@ -24,6 +25,11 @@ public class UI_OfficePanel : MonoBehaviour
     public void HellAvailability(int availability)
     {
         this.hellAvailability.text = "Hell: " + availability;
+    }
+
+    public void UpdateKarmicBalance(int karmicBalance)
+    {
+        this.karmicBalance.text = "Karmic Balance: " + karmicBalance;
     }
 
     public void OnHeavenPressed()

@@ -13,7 +13,7 @@ public class CharacterManager : MonoBehaviour
     [SerializeField] private UI_CharacterPanel characterPanel;
     [SerializeField] private UI_WaitingRoomPanel waitingRoomPanel;
     [SerializeField] private int characterCount;
-    private void Start()
+    public void Initialize()
     {
         GenerateCharacters();
         waitingRoomPanel.Initialize(characters);
@@ -38,6 +38,7 @@ public class CharacterManager : MonoBehaviour
             AssignRandomDeed(cd);
         }
         AssignRandomDeath(cd);
+        AssignRandomTime(cd);
 
 
     }
@@ -63,9 +64,23 @@ public class CharacterManager : MonoBehaviour
     {
         List<string> givenNamePool = cd.gender == Gender.Male ? givenNamesMale : givenNamesFemale;
         cd.name = givenNamePool[Random.Range(0, givenNamePool.Count)] + " " + surnames[Random.Range(0, surnames.Count)];
-
-     
     }
 
+    private void AssignRandomTime(CharacterData cd)
+    {
+        cd.yearsInPurgatory += Random.Range(0, 700);
+    }
+
+    public void IncrementTime(int time)
+    {
+        for(int i = 0; i < characters.Count; i++)
+        {
+            characters[i].yearsInPurgatory += time;
+            if(characters[i].yearsInPurgatory > 1000)
+            {
+                Debug.Log(characters[i].name + " is fading!");
+            }
+        }
+    }
 
 }
