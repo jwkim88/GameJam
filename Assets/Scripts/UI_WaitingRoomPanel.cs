@@ -8,6 +8,7 @@ public class UI_WaitingRoomPanel : MonoBehaviour
     [SerializeField] UI_WaitingCharacter characterPrefab;
     [SerializeField] RectTransform characterParent;
     [SerializeField] List<RectTransform> waitingRoomSlots = new List<RectTransform>();
+    [SerializeField] RectTransform judgmentSlot;
     List<UI_WaitingCharacter> characters = new List<UI_WaitingCharacter>();
     
     public void Initialize(List<CharacterData> characters)

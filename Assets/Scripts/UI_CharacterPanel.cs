@@ -10,5 +10,11 @@ public class UI_CharacterPanel : MonoBehaviour
     {
         portrait.sprite = cd.sprite;
         portrait.SetNativeSize();
+        portrait.enabled = true;
+    }
+
+    public void HideCharacter()
+    {
+        portrait.enabled = false;
     }
 }

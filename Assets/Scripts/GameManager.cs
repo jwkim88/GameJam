@@ -17,7 +17,6 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        cd = cm.characters[0];
         officePanel.UpdateYear(year);
         officePanel.HeavenAvailability(heavenAvailability);
         officePanel.HellAvailability(hellAvailability);
@@ -32,21 +31,26 @@ public class GameManager : MonoBehaviour
     public void OnHeavenSelected()
     {
         heavenAvailability--;
-        OnTimePass();
-        officePanel.HeavenAvailability(heavenAvailability);
+        OnCharacterInteractionFinished();
     }
 
     public void OnPurgatorySelected()
     {
-        OnTimePass();
-        // allow character selection
+        OnCharacterInteractionFinished();
     }
 
     public void OnHellSelected()
     {
         hellAvailability--;
-        OnTimePass();
+        OnCharacterInteractionFinished();
+    }
+
+    void OnCharacterInteractionFinished()
+    {
+        characterPanel.HideCharacter();
+        officePanel.HeavenAvailability(heavenAvailability);
         officePanel.HellAvailability(hellAvailability);
+        OnTimePass();
     }
 
     public void OnCharacterSelected(CharacterData cd)
