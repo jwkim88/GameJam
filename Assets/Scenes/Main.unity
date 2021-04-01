@@ -156,7 +156,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 8, y: -336}
+  m_AnchoredPosition: {x: 0, y: -328}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &256476976
@@ -222,6 +222,8 @@ MonoBehaviour:
   heavenAvailability: {fileID: 449110826}
   hellAvailability: {fileID: 1018683716}
   karmicBalance: {fileID: 715393969}
+  heavenButton: {fileID: 1574135180}
+  hellButton: {fileID: 1917305705}
 --- !u!1 &403777027
 GameObject:
   m_ObjectHideFlags: 0
@@ -1970,7 +1972,8 @@ MonoBehaviour:
       type: 3}
     m_PressedSprite: {fileID: 2767648495413217377, guid: 725b5d655f231b94fa7149f1a76ef636,
       type: 3}
-    m_SelectedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 4250884420121939138, guid: 725b5d655f231b94fa7149f1a76ef636,
+      type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -2483,7 +2486,7 @@ MonoBehaviour:
   - {fileID: 1372110549}
   - {fileID: 1931099428}
   - {fileID: 1905362569}
-  judgmentSlot: {fileID: 0}
+  judgmentSlot: {fileID: 189486502}
 --- !u!1 &1905362568
 GameObject:
   m_ObjectHideFlags: 0
@@ -2590,7 +2593,8 @@ MonoBehaviour:
       type: 3}
     m_PressedSprite: {fileID: 1825053546669655503, guid: 725b5d655f231b94fa7149f1a76ef636,
       type: 3}
-    m_SelectedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: -8872786383862529726, guid: 725b5d655f231b94fa7149f1a76ef636,
+      type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal

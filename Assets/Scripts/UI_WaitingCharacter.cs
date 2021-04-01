@@ -13,6 +13,7 @@ public class UI_WaitingCharacter : MonoBehaviour, IPointerClickHandler, IPointer
     private Image image;
     [SerializeField] TextMeshProUGUI nameText;
     [SerializeField] TextMeshProUGUI yearsText;
+    [SerializeField] AnimationCurve fadeCurve;
     public void Initialize(UI_WaitingRoomPanel panel)
     {
         this.panel = panel;
@@ -46,7 +47,8 @@ public class UI_WaitingCharacter : MonoBehaviour, IPointerClickHandler, IPointer
 
     public void UpdateFade()
     {
-        this.image.color = new Color(1, 1, 1, 1 - ((float)cd.yearsInPurgatory / 1000));
+        float fadeAmount = fadeCurve.Evaluate(1 - ((float)cd.yearsInPurgatory / 1000));
+        this.image.color = new Color(1, 1, 1, fadeAmount);
     }
 
     public void UpdateTimeText()

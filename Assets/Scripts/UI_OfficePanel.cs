@@ -11,18 +11,25 @@ public class UI_OfficePanel : MonoBehaviour
     [SerializeField] protected TextMeshProUGUI heavenAvailability;
     [SerializeField] protected TextMeshProUGUI hellAvailability;
     [SerializeField] protected TextMeshProUGUI karmicBalance;
+    [SerializeField] protected Button heavenButton;
+    [SerializeField] protected Button hellButton;
 
+    public void UpdateButtonInteractability(bool heavenAvailable, bool hellAvailable)
+    {
+        heavenButton.interactable = heavenAvailable;
+        hellButton.interactable = hellAvailable;
+    }
     public void UpdateYear(int year)
     {
         this.yearCounter.text = year.ToString();
     }
 
-    public void HeavenAvailability(int availability)
+    public void SetHeavenAvailability(int availability)
     {
         this.heavenAvailability.text = "Heaven: " + availability;
     }
 
-    public void HellAvailability(int availability)
+    public void SetHellAvailability(int availability)
     {
         this.hellAvailability.text = "Hell: " + availability;
     }

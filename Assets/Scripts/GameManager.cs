@@ -27,9 +27,10 @@ public class GameManager : MonoBehaviour
     void UpdateUI()
     {
         officePanel.UpdateYear(year);
-        officePanel.HeavenAvailability(heavenAvailability);
-        officePanel.HellAvailability(hellAvailability);
+        officePanel.SetHeavenAvailability(heavenAvailability);
+        officePanel.SetHellAvailability(hellAvailability);
         officePanel.UpdateKarmicBalance(karmicBalance);
+        officePanel.UpdateButtonInteractability( heavenAvailability > 0,  hellAvailability > 0);
         waitingRoomPanel.UpdateCharacterFadeState();
     }
 
@@ -41,6 +42,7 @@ public class GameManager : MonoBehaviour
 
     public void OnHeavenSelected()
     {
+        if (cd == null) return;
         heavenAvailability--;
         OnKarmicBalanceChanged(cd, true);
         OnCharacterInteractionFinished();
@@ -49,12 +51,14 @@ public class GameManager : MonoBehaviour
 
     public void OnPurgatorySelected()
     {
+        if (cd == null) return;
         OnCharacterInteractionFinished();
         waitingRoomPanel.OnCharacterReturnedToPurgatory();
     }
 
     public void OnHellSelected()
     {
+        if (cd == null) return;
         hellAvailability--;
         OnKarmicBalanceChanged(cd, false);
         OnCharacterInteractionFinished();
