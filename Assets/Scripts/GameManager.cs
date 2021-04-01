@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
         officePanel.UpdateYear(year);
         officePanel.HeavenAvailability(heavenAvailability);
         officePanel.HellAvailability(hellAvailability);
+        characterPanel.HideCharacter();
     }
 
     public void OnTimePass()
