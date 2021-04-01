@@ -41,6 +41,18 @@ TextureImporter:
   - first:
       213: -6373542160857731076
     second: GenSprites_14
+  - first:
+      213: -2889768090209043201
+    second: Candle_Holder
+  - first:
+      213: 4364891252265074175
+    second: Deeds_Front
+  - first:
+      213: -707912518919493049
+    second: Death_Certificate
+  - first:
+      213: -1514158581066794531
+    second: Deeds_Back
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -398,6 +410,90 @@ TextureImporter:
       bones: []
       spriteID: cff69155c21ac87a0800000000000000
       internalID: -6373542160857731076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Candle_Holder
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffcb4db8b3b75e7d0800000000000000
+      internalID: -2889768090209043201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Deeds_Front
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 640
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffd387eb775339c30800000000000000
+      internalID: 4364891252265074175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_Certificate
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74a60c1905dfc26f0800000000000000
+      internalID: -707912518919493049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Deeds_Back
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 511
+        width: 123
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd977e9fac0acfae0800000000000000
+      internalID: -1514158581066794531
       vertices: []
       indices: 
       edges: []

@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] protected int yearIncrement = 100;
     [SerializeField] protected int heavenAvailability = 3;
     [SerializeField] protected int hellAvailability = 3;
+    [SerializeField] protected int karmicBalance = 50;
 
     CharacterData cd;
     // Start is called before the first frame update
