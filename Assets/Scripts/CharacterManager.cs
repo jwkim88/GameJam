@@ -6,6 +6,7 @@ public class CharacterManager : MonoBehaviour
 {
     public List<CharacterData> characters = new List<CharacterData>();
     public List<DeedData> deeds = new List<DeedData>();
+    public List<DeedData> deaths  = new List<DeedData>();
     [SerializeField] private UI_CharacterPanel characterPanel;
     [SerializeField] private UI_WaitingRoomPanel waitingRoomPanel;
     [SerializeField] private int characterCount;
@@ -31,7 +32,9 @@ public class CharacterManager : MonoBehaviour
         {
             AssignRandomDeed(cd);
         }
-        
+        AssignRandomDeath(cd);
+
+
     }
 
     private void AssignRandomDeed(CharacterData cd)
@@ -43,5 +46,10 @@ public class CharacterManager : MonoBehaviour
             if (cd.deeds.Contains(deedID) == false) break;
         }
         cd.deeds.Add(deedID);
+    }
+
+    private void AssignRandomDeath(CharacterData cd)
+    {
+        cd.death = deaths[Random.Range(0, deaths.Count - 1)].id;
     }
 }

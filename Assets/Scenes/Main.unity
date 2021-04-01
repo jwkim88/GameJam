@@ -2728,6 +2728,131 @@ PrefabInstance:
       propertyPath: waitingRoomPanel
       value: 
       objectReference: {fileID: 1749631726}
+    - target: {fileID: 3232551794376143260, guid: 9b941439ed61dda458a41b47d6f1b413,
+        type: 3}
+      propertyPath: deaths.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3232551794376143260, guid: 9b941439ed61dda458a41b47d6f1b413,
+        type: 3}
+      propertyPath: deaths.Array.data[0].id
+      value: Old Age
+      objectReference: {fileID: 0}
+    - target: {fileID: 3232551794376143260, guid: 9b941439ed61dda458a41b47d6f1b413,
+        type: 3}
+      propertyPath: deaths.Array.data[1].id
+      value: Poisoned
+      objectReference: {fileID: 0}
+    - target: {fileID: 3232551794376143260, guid: 9b941439ed61dda458a41b47d6f1b413,
+        type: 3}
+      propertyPath: deaths.Array.data[2].id
+      value: Executed
+      objectReference: {fileID: 0}
+    - target: {fileID: 3232551794376143260, guid: 9b941439ed61dda458a41b47d6f1b413,
+        type: 3}
+      propertyPath: deaths.Array.data[3].id
+      value: Misadventure
+      objectReference: {fileID: 0}
+    - target: {fileID: 3232551794376143260, guid: 9b941439ed61dda458a41b47d6f1b413,
+        type: 3}
+      propertyPath: deaths.Array.data[4].id
+      value: Disease
+      objectReference: {fileID: 0}
+    - target: {fileID: 3232551794376143260, guid: 9b941439ed61dda458a41b47d6f1b413,
+        type: 3}
+      propertyPath: deaths.Array.data[5].id
+      value: Battle
+      objectReference: {fileID: 0}
+    - target: {fileID: 3232551794376143260, guid: 9b941439ed61dda458a41b47d6f1b413,
+        type: 3}
+      propertyPath: deaths.Array.data[6].id
+      value: Fire
+      objectReference: {fileID: 0}
+    - target: {fileID: 3232551794376143260, guid: 9b941439ed61dda458a41b47d6f1b413,
+        type: 3}
+      propertyPath: deaths.Array.data[7].id
+      value: Drowned
+      objectReference: {fileID: 0}
+    - target: {fileID: 3232551794376143260, guid: 9b941439ed61dda458a41b47d6f1b413,
+        type: 3}
+      propertyPath: deaths.Array.data[0].desc
+      value: Died peacefully in their sleep.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3232551794376143260, guid: 9b941439ed61dda458a41b47d6f1b413,
+        type: 3}
+      propertyPath: deaths.Array.data[0].name
+      value: Old Age
+      objectReference: {fileID: 0}
+    - target: {fileID: 3232551794376143260, guid: 9b941439ed61dda458a41b47d6f1b413,
+        type: 3}
+      propertyPath: deaths.Array.data[1].desc
+      value: Drank from a tainted goblet of wine.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3232551794376143260, guid: 9b941439ed61dda458a41b47d6f1b413,
+        type: 3}
+      propertyPath: deaths.Array.data[1].name
+      value: Poisoned
+      objectReference: {fileID: 0}
+    - target: {fileID: 3232551794376143260, guid: 9b941439ed61dda458a41b47d6f1b413,
+        type: 3}
+      propertyPath: deaths.Array.data[2].desc
+      value: Arrested and beheaded by their enemies.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3232551794376143260, guid: 9b941439ed61dda458a41b47d6f1b413,
+        type: 3}
+      propertyPath: deaths.Array.data[2].name
+      value: Executed
+      objectReference: {fileID: 0}
+    - target: {fileID: 3232551794376143260, guid: 9b941439ed61dda458a41b47d6f1b413,
+        type: 3}
+      propertyPath: deaths.Array.data[3].desc
+      value: Slipped off the edge of a tall cliff.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3232551794376143260, guid: 9b941439ed61dda458a41b47d6f1b413,
+        type: 3}
+      propertyPath: deaths.Array.data[3].name
+      value: Misadventure
+      objectReference: {fileID: 0}
+    - target: {fileID: 3232551794376143260, guid: 9b941439ed61dda458a41b47d6f1b413,
+        type: 3}
+      propertyPath: deaths.Array.data[4].desc
+      value: Died in pain and agony, covered in putrid sores.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3232551794376143260, guid: 9b941439ed61dda458a41b47d6f1b413,
+        type: 3}
+      propertyPath: deaths.Array.data[4].name
+      value: Disease
+      objectReference: {fileID: 0}
+    - target: {fileID: 3232551794376143260, guid: 9b941439ed61dda458a41b47d6f1b413,
+        type: 3}
+      propertyPath: deaths.Array.data[5].desc
+      value: Died fighting to the last breath.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3232551794376143260, guid: 9b941439ed61dda458a41b47d6f1b413,
+        type: 3}
+      propertyPath: deaths.Array.data[5].name
+      value: Battle
+      objectReference: {fileID: 0}
+    - target: {fileID: 3232551794376143260, guid: 9b941439ed61dda458a41b47d6f1b413,
+        type: 3}
+      propertyPath: deaths.Array.data[6].desc
+      value: Burnt alive, trapped by the flames.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3232551794376143260, guid: 9b941439ed61dda458a41b47d6f1b413,
+        type: 3}
+      propertyPath: deaths.Array.data[6].name
+      value: Fire
+      objectReference: {fileID: 0}
+    - target: {fileID: 3232551794376143260, guid: 9b941439ed61dda458a41b47d6f1b413,
+        type: 3}
+      propertyPath: deaths.Array.data[7].desc
+      value: Lost in a storm at sea.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3232551794376143260, guid: 9b941439ed61dda458a41b47d6f1b413,
+        type: 3}
+      propertyPath: deaths.Array.data[7].name
+      value: Drowned
+      objectReference: {fileID: 0}
     - target: {fileID: 3232551794376143261, guid: 9b941439ed61dda458a41b47d6f1b413,
         type: 3}
       propertyPath: m_Name
