@@ -10,6 +10,7 @@ public class CharacterManager : MonoBehaviour
     public List<string> givenNamesMale = new List<string>();
     public List<string> givenNamesFemale = new List<string>();
     public List<string> surnames = new List<string>();
+    public List<PortraitData> portraits = new List<PortraitData>();
     [SerializeField] private UI_CharacterPanel characterPanel;
     [SerializeField] private UI_WaitingRoomPanel waitingRoomPanel;
     [SerializeField] private int characterCount;
@@ -39,6 +40,7 @@ public class CharacterManager : MonoBehaviour
         }
         AssignRandomDeath(cd);
         AssignRandomTime(cd);
+        AssignRandomPortrait(cd);
 
 
     }
@@ -83,4 +85,8 @@ public class CharacterManager : MonoBehaviour
         }
     }
 
+    private void AssignRandomPortrait(CharacterData cd)
+    {
+        cd.sprite = portraits[Random.Range(0, portraits.Count - 1)].sprite;
+    }
 }
