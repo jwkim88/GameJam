@@ -5,9 +5,10 @@ using UnityEngine;
 public class CharacterManager : MonoBehaviour
 {
     public List<CharacterData> characters = new List<CharacterData>();
-    public UI_CharacterPanel characterPanel;
+    [SerializeField] private UI_CharacterPanel characterPanel;
+    [SerializeField] private UI_WaitingRoomPanel waitingRoomPanel;
     private void Start()
     {
-        characterPanel.ShowCharacter(characters[0]);
+        waitingRoomPanel.Initialize(characters);
     }
 }
