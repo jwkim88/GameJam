@@ -211,9 +211,9 @@ MonoBehaviour:
   m_fontSize: 36
   m_fontSizeBase: 36
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_fontSizeMax: 36
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
@@ -2990,9 +2990,9 @@ MonoBehaviour:
   m_fontSize: 30
   m_fontSizeBase: 30
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_fontSizeMax: 30
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
@@ -3105,9 +3105,9 @@ MonoBehaviour:
   m_fontSize: 30
   m_fontSizeBase: 30
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_fontSizeMax: 30
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
@@ -3239,9 +3239,9 @@ MonoBehaviour:
   m_fontSize: 36
   m_fontSizeBase: 36
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_fontSizeMax: 36
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
@@ -3780,154 +3780,9 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3232551794376143260, guid: 9b941439ed61dda458a41b47d6f1b413,
         type: 3}
-      propertyPath: characterCount
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3232551794376143260, guid: 9b941439ed61dda458a41b47d6f1b413,
-        type: 3}
-      propertyPath: characterPanel
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3232551794376143260, guid: 9b941439ed61dda458a41b47d6f1b413,
-        type: 3}
       propertyPath: waitingRoomPanel
       value: 
       objectReference: {fileID: 1749631726}
-    - target: {fileID: 3232551794376143260, guid: 9b941439ed61dda458a41b47d6f1b413,
-        type: 3}
-      propertyPath: surnames.Array.size
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3232551794376143260, guid: 9b941439ed61dda458a41b47d6f1b413,
-        type: 3}
-      propertyPath: surnames.Array.data[0]
-      value: the Great
-      objectReference: {fileID: 0}
-    - target: {fileID: 3232551794376143260, guid: 9b941439ed61dda458a41b47d6f1b413,
-        type: 3}
-      propertyPath: surnames.Array.data[1]
-      value: Varus
-      objectReference: {fileID: 0}
-    - target: {fileID: 3232551794376143260, guid: 9b941439ed61dda458a41b47d6f1b413,
-        type: 3}
-      propertyPath: surnames.Array.data[2]
-      value: Kenna
-      objectReference: {fileID: 0}
-    - target: {fileID: 3232551794376143260, guid: 9b941439ed61dda458a41b47d6f1b413,
-        type: 3}
-      propertyPath: surnames.Array.data[3]
-      value: Mirabilis
-      objectReference: {fileID: 0}
-    - target: {fileID: 3232551794376143260, guid: 9b941439ed61dda458a41b47d6f1b413,
-        type: 3}
-      propertyPath: surnames.Array.data[4]
-      value: Khan
-      objectReference: {fileID: 0}
-    - target: {fileID: 3232551794376143260, guid: 9b941439ed61dda458a41b47d6f1b413,
-        type: 3}
-      propertyPath: surnames.Array.data[5]
-      value: Nacht
-      objectReference: {fileID: 0}
-    - target: {fileID: 3232551794376143260, guid: 9b941439ed61dda458a41b47d6f1b413,
-        type: 3}
-      propertyPath: surnames.Array.data[6]
-      value: the Pious
-      objectReference: {fileID: 0}
-    - target: {fileID: 3232551794376143260, guid: 9b941439ed61dda458a41b47d6f1b413,
-        type: 3}
-      propertyPath: surnames.Array.data[7]
-      value: Ney
-      objectReference: {fileID: 0}
-    - target: {fileID: 3232551794376143260, guid: 9b941439ed61dda458a41b47d6f1b413,
-        type: 3}
-      propertyPath: surnames.Array.data[8]
-      value: Bolingbroke
-      objectReference: {fileID: 0}
-    - target: {fileID: 3232551794376143260, guid: 9b941439ed61dda458a41b47d6f1b413,
-        type: 3}
-      propertyPath: surnames.Array.data[9]
-      value: the Terrible
-      objectReference: {fileID: 0}
-    - target: {fileID: 3232551794376143260, guid: 9b941439ed61dda458a41b47d6f1b413,
-        type: 3}
-      propertyPath: givenNamesMale.Array.size
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 3232551794376143260, guid: 9b941439ed61dda458a41b47d6f1b413,
-        type: 3}
-      propertyPath: givenNamesFemale.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3232551794376143260, guid: 9b941439ed61dda458a41b47d6f1b413,
-        type: 3}
-      propertyPath: givenNamesMale.Array.data[0]
-      value: Alexander
-      objectReference: {fileID: 0}
-    - target: {fileID: 3232551794376143260, guid: 9b941439ed61dda458a41b47d6f1b413,
-        type: 3}
-      propertyPath: givenNamesMale.Array.data[1]
-      value: Cormac
-      objectReference: {fileID: 0}
-    - target: {fileID: 3232551794376143260, guid: 9b941439ed61dda458a41b47d6f1b413,
-        type: 3}
-      propertyPath: givenNamesMale.Array.data[2]
-      value: Quattro
-      objectReference: {fileID: 0}
-    - target: {fileID: 3232551794376143260, guid: 9b941439ed61dda458a41b47d6f1b413,
-        type: 3}
-      propertyPath: givenNamesMale.Array.data[3]
-      value: Gustav
-      objectReference: {fileID: 0}
-    - target: {fileID: 3232551794376143260, guid: 9b941439ed61dda458a41b47d6f1b413,
-        type: 3}
-      propertyPath: givenNamesMale.Array.data[4]
-      value: Khal
-      objectReference: {fileID: 0}
-    - target: {fileID: 3232551794376143260, guid: 9b941439ed61dda458a41b47d6f1b413,
-        type: 3}
-      propertyPath: givenNamesMale.Array.data[5]
-      value: Mirek
-      objectReference: {fileID: 0}
-    - target: {fileID: 3232551794376143260, guid: 9b941439ed61dda458a41b47d6f1b413,
-        type: 3}
-      propertyPath: givenNamesMale.Array.data[6]
-      value: Severus
-      objectReference: {fileID: 0}
-    - target: {fileID: 3232551794376143260, guid: 9b941439ed61dda458a41b47d6f1b413,
-        type: 3}
-      propertyPath: givenNamesMale.Array.data[7]
-      value: Severus
-      objectReference: {fileID: 0}
-    - target: {fileID: 3232551794376143260, guid: 9b941439ed61dda458a41b47d6f1b413,
-        type: 3}
-      propertyPath: givenNamesFemale.Array.data[0]
-      value: Neha
-      objectReference: {fileID: 0}
-    - target: {fileID: 3232551794376143260, guid: 9b941439ed61dda458a41b47d6f1b413,
-        type: 3}
-      propertyPath: givenNamesFemale.Array.data[1]
-      value: Marina
-      objectReference: {fileID: 0}
-    - target: {fileID: 3232551794376143260, guid: 9b941439ed61dda458a41b47d6f1b413,
-        type: 3}
-      propertyPath: givenNamesFemale.Array.data[2]
-      value: Ophelia
-      objectReference: {fileID: 0}
-    - target: {fileID: 3232551794376143260, guid: 9b941439ed61dda458a41b47d6f1b413,
-        type: 3}
-      propertyPath: givenNamesFemale.Array.data[3]
-      value: Vesta
-      objectReference: {fileID: 0}
-    - target: {fileID: 3232551794376143260, guid: 9b941439ed61dda458a41b47d6f1b413,
-        type: 3}
-      propertyPath: givenNamesFemale.Array.data[4]
-      value: Karin
-      objectReference: {fileID: 0}
-    - target: {fileID: 3232551794376143260, guid: 9b941439ed61dda458a41b47d6f1b413,
-        type: 3}
-      propertyPath: givenNamesFemale.Array.data[5]
-      value: Astrid
-      objectReference: {fileID: 0}
     - target: {fileID: 3232551794376143261, guid: 9b941439ed61dda458a41b47d6f1b413,
         type: 3}
       propertyPath: m_Name

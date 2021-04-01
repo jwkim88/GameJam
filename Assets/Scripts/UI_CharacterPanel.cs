@@ -24,11 +24,17 @@ public class UI_CharacterPanel : MonoBehaviour
         nameText.enabled = true;
         deathText.enabled = true;
         deathCertificateParent.gameObject.SetActive(true);
+        UpdateDeedObjects(cd);   
+    }
+
+    public void UpdateDeedObjects(CharacterData cd)
+    {
         DeedData deedData;
-        for(int i = 0; i < cd.deeds.Count; i++)
+        for (int i = 0; i < cd.deeds.Count; i++)
         {
             deedData = cm.deeds.Find(d => d.id == cd.deeds[i]);
             deedObjects[i].AssignDeedData(deedData);
+            deedObjects[i].gameObject.SetActive(true);
         }
     }
 
@@ -38,5 +44,15 @@ public class UI_CharacterPanel : MonoBehaviour
         deathText.enabled = false;
         nameText.enabled = false;
         deathCertificateParent.gameObject.SetActive(false);
+        HideDeeds();
     }
+
+    public void HideDeeds()
+    {
+        for(int i = 0; i < deedObjects.Length; i++)
+        {
+            deedObjects[i].gameObject.SetActive(false);
+        }
+    }
+
 }

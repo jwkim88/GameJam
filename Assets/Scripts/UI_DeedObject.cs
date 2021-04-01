@@ -25,6 +25,6 @@ public class UI_DeedObject : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     public void OnPointerExit(PointerEventData data)
     {
-        hoverTextParent.gameObject.SetActive(true);
+        hoverTextParent.gameObject.SetActive(false);
     }
 }
