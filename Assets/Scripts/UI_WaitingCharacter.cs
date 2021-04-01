@@ -29,7 +29,7 @@ public class UI_WaitingCharacter : MonoBehaviour, IPointerClickHandler, IPointer
     public void OnPointerClick(PointerEventData data)
     {
         Debug.Log("Character Selected: " + cd.name);
-        panel.OnCharacterSelected(cd);
+        panel.OnCharacterSelected(this, cd);
     }
 
     public void OnPointerEnter(PointerEventData data)
@@ -53,4 +53,5 @@ public class UI_WaitingCharacter : MonoBehaviour, IPointerClickHandler, IPointer
     {
         this.yearsText.text = cd.yearsInPurgatory + " Years in Purgatory";
     }
+
 }

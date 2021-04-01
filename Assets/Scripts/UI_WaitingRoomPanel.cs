@@ -10,7 +10,7 @@ public class UI_WaitingRoomPanel : MonoBehaviour
     [SerializeField] List<RectTransform> waitingRoomSlots = new List<RectTransform>();
     [SerializeField] RectTransform judgmentSlot;
     List<UI_WaitingCharacter> characters = new List<UI_WaitingCharacter>();
-    
+    UI_WaitingCharacter activeCharacter;
     public void Initialize(List<CharacterData> characters)
     {
         for(int i = 0; i < characters.Count; i++)
@@ -50,9 +50,38 @@ public class UI_WaitingRoomPanel : MonoBehaviour
         }
     }
 
-    public void OnCharacterSelected(CharacterData cd)
+    public void OnCharacterSelected(UI_WaitingCharacter waitingCharacter, CharacterData cd)
     {
+        activeCharacter = waitingCharacter;
+        activeCharacter.GetComponent<RectTransform>().SetParent(judgmentSlot);
+        activeCharacter.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
         gm.OnCharacterSelected(cd);
+    }
+
+    public void OnCharacterSentToHeaven()
+    {
+        activeCharacter.gameObject.SetActive(false);
+        activeCharacter = null;
+    }
+
+    public void OnCharacterSentToHell()
+    {
+        activeCharacter.gameObject.SetActive(false);
+        activeCharacter = null;
+    }
+
+    public void OnCharacterReturnedToPurgatory()
+    {
+        for (int i = 0; i < waitingRoomSlots.Count; i++)
+        {
+            if (waitingRoomSlots[i].childCount == 0)
+            {
+                activeCharacter.GetComponent<RectTransform>().SetParent(waitingRoomSlots[i]);
+                activeCharacter.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
+                break;
+            }
+        }
+        activeCharacter = null;
     }
 
     

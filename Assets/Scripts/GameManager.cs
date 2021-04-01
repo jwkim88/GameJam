@@ -44,11 +44,13 @@ public class GameManager : MonoBehaviour
         heavenAvailability--;
         OnKarmicBalanceChanged(cd, true);
         OnCharacterInteractionFinished();
+        waitingRoomPanel.OnCharacterSentToHeaven();
     }
 
     public void OnPurgatorySelected()
     {
         OnCharacterInteractionFinished();
+        waitingRoomPanel.OnCharacterReturnedToPurgatory();
     }
 
     public void OnHellSelected()
@@ -56,6 +58,7 @@ public class GameManager : MonoBehaviour
         hellAvailability--;
         OnKarmicBalanceChanged(cd, false);
         OnCharacterInteractionFinished();
+        waitingRoomPanel.OnCharacterSentToHell();
     }
 
     void OnCharacterInteractionFinished()
