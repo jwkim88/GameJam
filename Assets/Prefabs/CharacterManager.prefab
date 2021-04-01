@@ -85,6 +85,39 @@ MonoBehaviour:
     name: Traitor
     desc: Betrayed the people that trusted them.
     karma: -2
+  deaths:
+  - id: Old Age
+    name: Old Age
+    desc: Died peacefully in their sleep.
+    karma: 0
+  - id: Poisoned
+    name: Poisoned
+    desc: Drank from a tainted goblet of wine.
+    karma: 0
+  - id: Executed
+    name: Executed
+    desc: Arrested and beheaded by their enemies.
+    karma: 0
+  - id: Misadventure
+    name: Misadventure
+    desc: Slipped off the edge of a tall cliff.
+    karma: 0
+  - id: Disease
+    name: Disease
+    desc: Died in pain and agony, covered in putrid sores.
+    karma: 0
+  - id: Battle
+    name: Battle
+    desc: Died fighting to the last breath.
+    karma: 0
+  - id: Fire
+    name: Fire
+    desc: Burnt alive, trapped by the flames.
+    karma: 0
+  - id: Drowned
+    name: Drowned
+    desc: Lost in a storm at sea.
+    karma: 0
   characterPanel: {fileID: 0}
   waitingRoomPanel: {fileID: 0}
   characterCount: 5
