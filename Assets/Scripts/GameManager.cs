@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] protected CharacterManager cm;
     [SerializeField] protected UI_OfficePanel officePanel;
+    [SerializeField] protected UI_CharacterPanel characterPanel;
     [SerializeField] protected int year = 2000;
     [SerializeField] protected int yearIncrement = 100;
     [SerializeField] protected int heavenAvailability = 3;
@@ -48,5 +49,10 @@ public class GameManager : MonoBehaviour
         officePanel.HellAvailability(hellAvailability);
     }
 
+    public void OnCharacterSelected(CharacterData cd)
+    {
+        this.cd = cd;
+        characterPanel.ShowCharacter(cd);
+    }
 
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class UI_WaitingRoomPanel : MonoBehaviour
 {
+    [SerializeField] GameManager gm;
     [SerializeField] UI_WaitingCharacter characterPrefab;
     [SerializeField] RectTransform characterParent;
     [SerializeField] List<RectTransform> waitingRoomSlots = new List<RectTransform>();
@@ -25,6 +26,7 @@ public class UI_WaitingRoomPanel : MonoBehaviour
     public void AssignCharacter(CharacterData cd)
     {
         UI_WaitingCharacter c = SpawnCharacter();
+        c.Initialize(this);
         c.AssignCharacter(cd);
         characters.Add(c);
         for(int i = 0; i < waitingRoomSlots.Count; i++)
@@ -36,6 +38,11 @@ public class UI_WaitingRoomPanel : MonoBehaviour
                 break;
             }
         }
+    }
+
+    public void OnCharacterSelected(CharacterData cd)
+    {
+        gm.OnCharacterSelected(cd);
     }
 
     

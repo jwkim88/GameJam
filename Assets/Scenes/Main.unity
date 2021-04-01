@@ -743,6 +743,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cm: {fileID: 2136691745}
   officePanel: {fileID: 256476978}
+  characterPanel: {fileID: 1121954772}
   year: 2000
   yearIncrement: 100
   heavenAvailability: 3
@@ -2037,6 +2038,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 702757b64cc90aa49b008d5f32729133, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 695978353}
   characterPrefab: {fileID: 948806334700612448, guid: 01738cae1fc00d247b2578832be84925,
     type: 3}
   characterParent: {fileID: 585371369}
