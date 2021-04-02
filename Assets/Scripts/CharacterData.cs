@@ -13,6 +13,10 @@ public class CharacterData
     public Sprite sprite;
     public Sprite waitingRoomSprite;
 
+    public bool Faded
+    {
+        get { return yearsInPurgatory > 1000; }
+    }
 }
 
 public enum Gender { Male, Female}

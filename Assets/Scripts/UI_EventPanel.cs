@@ -21,9 +21,15 @@ public class UI_EventPanel : MonoBehaviour
         hideCoroutine = StartCoroutine(HideAfterDelay());
     }
 
+    public void OnInputReceived()
+    {
+        if (hideCoroutine != null) StopCoroutine(hideCoroutine);
+        Hide();
+    }
+
     IEnumerator HideAfterDelay()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(10f);
         Hide();
     }
 

@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] protected int heavenAvailability = 3;
     [SerializeField] protected int hellAvailability = 3;
     [SerializeField] protected int karmicBalance = 5;
-
+    protected bool correctChoiceMade;
     CharacterData cd;
     // Start is called before the first frame update
 
@@ -42,7 +42,21 @@ public class GameManager : MonoBehaviour
     {
         year += 100;
         cm.IncrementTime(100);
-        eventPanel.Show("Another century passes. \n\nRestless souls await you once more, eager for their release...");
+
+        List<CharacterData> fadedSouls = cm.characters.FindAll(c => c.Faded);
+        bool soulsHaveFaded = fadedSouls.Count > 0;
+        
+        string eventText = "Another century passes.";
+        string fadedText = "\n\nA few ancient souls have lost all hope, fading to dust. \nYour failure to judge them upsets the karmic balance.";
+        string correctChoiceText = "\n\nYour judgment of " + cd.name + " was just, restoring the karmic balance.";
+        string wrongChoiceText = "\n\nYour judgment of " + cd.name + " was unjust, upsetting the karmic balance.";
+        string endText = "\n\nRestless souls await your judgment, \neager to be released from eternal ennui...";
+
+        eventText += correctChoiceMade ? correctChoiceText : wrongChoiceText;
+        if (soulsHaveFaded) eventText += fadedText;
+        else eventText += endText;
+
+        eventPanel.Show( eventText);
     }
 
     public void OnHeavenSelected()
@@ -50,7 +64,8 @@ public class GameManager : MonoBehaviour
         if (cd == null) return;
         heavenAvailability--;
         officePanel.MoveHeavenBead();
-        OnKarmicBalanceChanged(cd, true);
+        correctChoiceMade = IsCharacterRighteous(cd) == true;
+        OnKarmicBalanceChanged(cd, correctChoiceMade);
         OnCharacterInteractionFinished();
         waitingRoomPanel.OnCharacterSentToHeaven();
     }
@@ -67,7 +82,8 @@ public class GameManager : MonoBehaviour
         if (cd == null) return;
         hellAvailability--;
         officePanel.MoveHellBead();
-        OnKarmicBalanceChanged(cd, false);
+        correctChoiceMade = IsCharacterRighteous(cd) == false;
+        OnKarmicBalanceChanged(cd, correctChoiceMade);
         OnCharacterInteractionFinished();
         waitingRoomPanel.OnCharacterSentToHell();
     }
@@ -98,9 +114,9 @@ public class GameManager : MonoBehaviour
         return karma > 0;
     }
 
-    public void OnKarmicBalanceChanged(CharacterData cd, bool sentToHeaven)
+    public void OnKarmicBalanceChanged(CharacterData cd, bool correctChoice)
     {
-        bool correctChoice = IsCharacterRighteous(cd) == sentToHeaven; 
+       
         DeedData dd;
         int karma = 0;
         int multiplier = correctChoice ? 5 : -5;
