@@ -57,8 +57,8 @@ public class GameManager : MonoBehaviour
         
         switch(cd.destination)
         {
-            case Destination.Heaven: judgmentText = "You send " + cd.name + " to Heaven, to live in bliss for all eternity."; break;
-            case Destination.Hell: judgmentText = "You send " + cd.name + " to Hell, damning them to eternal torment."; break;
+            case Destination.Heaven: judgmentText = "You send " + cd.name + " to Heaven,\nto live in bliss for all eternity."; break;
+            case Destination.Hell: judgmentText = "You send " + cd.name + " to Hell,\ndamning them to eternal torment."; break;
             //case Destination.Purgatory: judgmentText = "You keep " + cd.name + " in Purgatory, asking them to reflect upon their life" +
             //        "\nto come to a better understanding of their own soul."; break;
         }
