@@ -56,6 +56,12 @@ TextureImporter:
   - first:
       213: 3732583249158028916
     second: Chair
+  - first:
+      213: 4135667432926851854
+    second: Crystal_Container
+  - first:
+      213: -947162128078559327
+    second: Crystal_Fill
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -518,6 +524,48 @@ TextureImporter:
       bones: []
       spriteID: 47e33a460bcccc330800000000000000
       internalID: 3732583249158028916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crystal_Container
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 514
+        width: 256
+        height: 510
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e03b1c85e97d46930800000000000000
+      internalID: 4135667432926851854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crystal_Fill
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 512
+        width: 255
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a7ac2310110bd2f0800000000000000
+      internalID: -947162128078559327
       vertices: []
       indices: 
       edges: []

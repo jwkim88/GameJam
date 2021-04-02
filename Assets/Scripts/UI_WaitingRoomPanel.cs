@@ -28,17 +28,18 @@ public class UI_WaitingRoomPanel : MonoBehaviour
     {
         UI_WaitingCharacter c = SpawnCharacter();
         c.Initialize(this);
-        c.AssignCharacter(cd);
+        
         characters.Add(c);
         for(int i = 0; i < waitingRoomSlots.Count; i++)
         {
             if(waitingRoomSlots[i].childCount == 0)
             {
-                c.GetComponent<RectTransform>().SetParent(waitingRoomSlots[i]);
-                c.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
+                c.SetParent(waitingRoomSlots[i]);
+                c.AssignCharacter(cd, i);
                 break;
             }
         }
+        
     }
 
     public void UpdateCharacterFadeState()
@@ -61,27 +62,22 @@ public class UI_WaitingRoomPanel : MonoBehaviour
 
     public void OnCharacterSentToHeaven()
     {
+        if (activeCharacter == null) return;
         activeCharacter.gameObject.SetActive(false);
         activeCharacter = null;
     }
 
     public void OnCharacterSentToHell()
     {
+        if (activeCharacter == null) return;
         activeCharacter.gameObject.SetActive(false);
         activeCharacter = null;
     }
 
     public void OnCharacterReturnedToPurgatory()
     {
-        for (int i = 0; i < waitingRoomSlots.Count; i++)
-        {
-            if (waitingRoomSlots[i].childCount == 0)
-            {
-                activeCharacter.GetComponent<RectTransform>().SetParent(waitingRoomSlots[i]);
-                activeCharacter.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
-                break;
-            }
-        }
+        if (activeCharacter == null) return;
+        activeCharacter.SetParent(waitingRoomSlots[activeCharacter.slotIndex]);
         activeCharacter = null;
     }
 

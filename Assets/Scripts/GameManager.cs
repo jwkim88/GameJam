@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
         officePanel.SetHeavenAvailability(heavenAvailability);
         officePanel.SetHellAvailability(hellAvailability);
         officePanel.UpdateKarmicBalance(karmicBalance);
+        officePanel.UpdateKarmaCrystal((float)karmicBalance / 100);
         officePanel.UpdateButtonInteractability( heavenAvailability > 0,  hellAvailability > 0);
         waitingRoomPanel.UpdateCharacterFadeState();
     }
@@ -69,6 +70,7 @@ public class GameManager : MonoBehaviour
     {
         characterPanel.HideCharacter();
         OnTimePass();
+        cd = null;
         UpdateUI();
     }
 
@@ -103,6 +105,6 @@ public class GameManager : MonoBehaviour
         }
 
         karmicBalance += karma * multiplier;
-        
+   
     }
 }

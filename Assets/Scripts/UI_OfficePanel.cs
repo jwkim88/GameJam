@@ -13,6 +13,7 @@ public class UI_OfficePanel : MonoBehaviour
     [SerializeField] protected TextMeshProUGUI karmicBalance;
     [SerializeField] protected Button heavenButton;
     [SerializeField] protected Button hellButton;
+    [SerializeField] protected UI_KarmaCrystal karmaCrystal;
 
     public void UpdateButtonInteractability(bool heavenAvailable, bool hellAvailable)
     {
@@ -37,6 +38,11 @@ public class UI_OfficePanel : MonoBehaviour
     public void UpdateKarmicBalance(int karmicBalance)
     {
         this.karmicBalance.text = "Karmic Balance: " + karmicBalance;
+    }
+
+    public void UpdateKarmaCrystal(float amount)
+    {
+        karmaCrystal.SetFill(amount);
     }
 
     public void OnHeavenPressed()
