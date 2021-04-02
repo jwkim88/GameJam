@@ -22,16 +22,18 @@ public class GameManager : MonoBehaviour
         cm.Initialize();
         UpdateUI();
         characterPanel.HideCharacter();
+        officePanel.SetHeavenAvailability(heavenAvailability);
+        officePanel.SetHellAvailability(hellAvailability);
     }
 
     void UpdateUI()
     {
         officePanel.UpdateYear(year);
-        officePanel.SetHeavenAvailability(heavenAvailability);
-        officePanel.SetHellAvailability(hellAvailability);
+
         officePanel.UpdateKarmicBalance(karmicBalance);
         officePanel.UpdateKarmaCrystal((float)karmicBalance / 100);
         officePanel.UpdateButtonInteractability( heavenAvailability > 0,  hellAvailability > 0);
+        
         waitingRoomPanel.UpdateCharacterFadeState();
     }
 
@@ -45,6 +47,7 @@ public class GameManager : MonoBehaviour
     {
         if (cd == null) return;
         heavenAvailability--;
+        officePanel.MoveHeavenBead();
         OnKarmicBalanceChanged(cd, true);
         OnCharacterInteractionFinished();
         waitingRoomPanel.OnCharacterSentToHeaven();
@@ -61,6 +64,7 @@ public class GameManager : MonoBehaviour
     {
         if (cd == null) return;
         hellAvailability--;
+        officePanel.MoveHellBead();
         OnKarmicBalanceChanged(cd, false);
         OnCharacterInteractionFinished();
         waitingRoomPanel.OnCharacterSentToHell();

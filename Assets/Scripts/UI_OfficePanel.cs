@@ -10,10 +10,13 @@ public class UI_OfficePanel : MonoBehaviour
     [SerializeField] protected TextMeshProUGUI yearCounter;
     [SerializeField] protected TextMeshProUGUI heavenAvailability;
     [SerializeField] protected TextMeshProUGUI hellAvailability;
+    [SerializeField] protected UI_AbacusCounter heavenCounter;
+    [SerializeField] protected UI_AbacusCounter hellCounter;
     [SerializeField] protected TextMeshProUGUI karmicBalance;
     [SerializeField] protected Button heavenButton;
     [SerializeField] protected Button hellButton;
     [SerializeField] protected UI_KarmaCrystal karmaCrystal;
+    
 
     public void UpdateButtonInteractability(bool heavenAvailable, bool hellAvailable)
     {
@@ -27,12 +30,23 @@ public class UI_OfficePanel : MonoBehaviour
 
     public void SetHeavenAvailability(int availability)
     {
-        this.heavenAvailability.text = "Heaven: " + availability;
+        heavenCounter.UpdateBeadAvailability(availability);
     }
 
     public void SetHellAvailability(int availability)
     {
-        this.hellAvailability.text = "Hell: " + availability;
+        hellCounter.UpdateBeadAvailability(availability);
+
+    }
+
+    public void MoveHeavenBead()
+    {
+        heavenCounter.MoveBead();
+    }
+
+    public void MoveHellBead()
+    {
+        hellCounter.MoveBead();
     }
 
     public void UpdateKarmicBalance(int karmicBalance)
