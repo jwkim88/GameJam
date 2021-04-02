@@ -52,6 +52,7 @@ public class UI_WaitingRoomPanel : MonoBehaviour
 
     public void OnCharacterSelected(UI_WaitingCharacter waitingCharacter, CharacterData cd)
     {
+        if (activeCharacter != null) return;
         activeCharacter = waitingCharacter;
         activeCharacter.GetComponent<RectTransform>().SetParent(judgmentSlot);
         activeCharacter.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;

@@ -110,6 +110,9 @@ MonoBehaviour:
   - id: Drowned
     name: Drowned
     desc: Lost in a storm at sea.
+  - id: Sacrifice
+    name: Sacrifice
+    desc: 'Protected their liege from a mortal blow. '
   givenNamesMale:
   - Alexander
   - Cormac
@@ -119,12 +122,13 @@ MonoBehaviour:
   - Mirek
   - Severus
   givenNamesFemale:
-  - Neha
+  - Belinda
   - Marina
   - Ophelia
   - Vesta
   - Karin
   - Astrid
+  - Gertrude
   surnames:
   - the Great
   - Varus
@@ -136,6 +140,25 @@ MonoBehaviour:
   - Ney
   - Bolingbroke
   - the Terrible
+  portraits:
+  - portraitSprite: {fileID: 21300000, guid: 43c52f0678b10754588f41508be2b167, type: 3}
+    waitingRoomSprite: {fileID: 1040661001404219393, guid: bdea6b46a663f724c8853b90e45ee085,
+      type: 3}
+  - portraitSprite: {fileID: 21300000, guid: 43c52f0678b10754588f41508be2b167, type: 3}
+    waitingRoomSprite: {fileID: -6122387226157213865, guid: bdea6b46a663f724c8853b90e45ee085,
+      type: 3}
+  - portraitSprite: {fileID: 21300000, guid: 43c52f0678b10754588f41508be2b167, type: 3}
+    waitingRoomSprite: {fileID: -6813776595023236110, guid: bdea6b46a663f724c8853b90e45ee085,
+      type: 3}
+  - portraitSprite: {fileID: 21300000, guid: 43c52f0678b10754588f41508be2b167, type: 3}
+    waitingRoomSprite: {fileID: -510856371197657731, guid: bdea6b46a663f724c8853b90e45ee085,
+      type: 3}
+  - portraitSprite: {fileID: 21300000, guid: 43c52f0678b10754588f41508be2b167, type: 3}
+    waitingRoomSprite: {fileID: -4024042522783735975, guid: bdea6b46a663f724c8853b90e45ee085,
+      type: 3}
+  - portraitSprite: {fileID: 21300000, guid: 43c52f0678b10754588f41508be2b167, type: 3}
+    waitingRoomSprite: {fileID: 3365863197156616433, guid: bdea6b46a663f724c8853b90e45ee085,
+      type: 3}
   characterPanel: {fileID: 0}
   waitingRoomPanel: {fileID: 0}
   characterCount: 10

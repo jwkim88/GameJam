@@ -25,6 +25,9 @@ public class UI_WaitingCharacter : MonoBehaviour, IPointerClickHandler, IPointer
     {
         this.cd = cd;
         this.nameText.text = cd.name;
+        this.image.sprite = cd.waitingRoomSprite;
+        this.image.SetNativeSize();
+        this.image.rectTransform.sizeDelta = new Vector2(cd.waitingRoomSprite.rect.width, cd.waitingRoomSprite.rect.height) * 0.5f;
 
     }
     public void OnPointerClick(PointerEventData data)
