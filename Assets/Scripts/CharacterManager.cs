@@ -20,19 +20,30 @@ public class CharacterManager : MonoBehaviour
         waitingRoomPanel.Initialize(characters);
     }
 
-    private void GenerateCharacters()
+    public void RemoveDepartedCharacters()
     {
-        for(int i = 0; i < characterCount; i++)
+        for(int i = characters.Count - 1; i >=0; i--)
+        {
+            if(characters[i].Faded)characters.Remove(characters[i]);
+            else if(characters[i].destination != Destination.Purgatory) characters.Remove(characters[i]);
+        }
+    }
+
+    public void GenerateCharacters()
+    {
+        for(int i = characters.Count; i < characterCount; i++)
         {
             GenerateCharacter();
         }
     }
 
+    
     private void GenerateCharacter()
     {
         CharacterData cd = new CharacterData();
         cd.gender = Random.Range(0, 2) >= 1 ? Gender.Male : Gender.Female;
         characters.Add(cd);
+        AssignRandomPortrait(cd);
         AssignRandomName(cd);
         for(int i = 0; i < 2; i++)
         {
@@ -40,7 +51,7 @@ public class CharacterManager : MonoBehaviour
         }
         AssignRandomDeath(cd);
         AssignRandomTime(cd);
-        AssignRandomPortrait(cd);
+        
 
 
     }
