@@ -73,4 +73,19 @@ public class UI_WaitingCharacter : MonoBehaviour, IPointerClickHandler, IPointer
         this.yearsText.text = cd.yearsInPurgatory + " Years in Purgatory";
     }
 
+    Coroutine reappearAnimation;
+    public void Reappear(RectTransform rect)
+    {
+        if (reappearAnimation != null) StopCoroutine(reappearAnimation);
+        reappearAnimation = StartCoroutine(ReappearAnimation(rect));
+    }
+
+    IEnumerator ReappearAnimation(RectTransform rect)
+    {
+        this.animator.Play("Hide");
+        yield return new WaitForSeconds(0.75f);
+        SetParent(rect);
+        this.animator.Play("Show");
+    }
+
 }

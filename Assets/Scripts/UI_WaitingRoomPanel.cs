@@ -55,8 +55,7 @@ public class UI_WaitingRoomPanel : MonoBehaviour
     {
         if (activeCharacter != null) return;
         activeCharacter = waitingCharacter;
-        activeCharacter.GetComponent<RectTransform>().SetParent(judgmentSlot);
-        activeCharacter.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
+        activeCharacter.Reappear(judgmentSlot);
         gm.OnCharacterSelected(cd);
     }
 
@@ -77,7 +76,8 @@ public class UI_WaitingRoomPanel : MonoBehaviour
     public void OnCharacterReturnedToPurgatory()
     {
         if (activeCharacter == null) return;
-        activeCharacter.SetParent(waitingRoomSlots[activeCharacter.slotIndex]);
+        activeCharacter.Reappear(waitingRoomSlots[activeCharacter.slotIndex]);
+        
         activeCharacter = null;
     }
 
