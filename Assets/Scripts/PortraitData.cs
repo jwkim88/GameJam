@@ -5,5 +5,6 @@ using UnityEngine;
 [System.Serializable]
 public class PortraitData 
 {
-    public Sprite sprite;
+    public Sprite portraitSprite;
+    public Sprite waitingRoomSprite;
 }

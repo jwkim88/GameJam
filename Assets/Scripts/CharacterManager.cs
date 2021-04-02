@@ -87,6 +87,8 @@ public class CharacterManager : MonoBehaviour
 
     private void AssignRandomPortrait(CharacterData cd)
     {
-        cd.sprite = portraits[Random.Range(0, portraits.Count - 1)].sprite;
+        PortraitData pd = portraits[Random.Range(0, portraits.Count - 1)];
+        cd.sprite = pd.portraitSprite;
+        cd.waitingRoomSprite = pd.waitingRoomSprite;
     }
 }

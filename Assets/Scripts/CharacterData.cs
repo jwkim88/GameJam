@@ -11,6 +11,7 @@ public class CharacterData
     public string death;
     public List<string> deeds = new List<string>();
     public Sprite sprite;
+    public Sprite waitingRoomSprite;
 
 }
 
