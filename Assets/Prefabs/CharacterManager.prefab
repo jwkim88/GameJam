@@ -49,42 +49,52 @@ MonoBehaviour:
     name: Cannibal
     desc: Ate human flesh out of desperation.
     karma: -2
+    icon: {fileID: -867113690680384313, guid: b3763bd9e029563449216841d03dc674, type: 3}
   - id: Vigilante
     name: Vigilante
     desc: Took justice into their own hands.
     karma: 2
+    icon: {fileID: 0}
   - id: Loving Parent
     name: Loving Parent
     desc: Deeply cared for their children.
     karma: 2
+    icon: {fileID: -2086508084688841395, guid: b3763bd9e029563449216841d03dc674, type: 3}
   - id: Gardener
     name: Gardener
     desc: Planted trees for future generations.
     karma: 2
+    icon: {fileID: -1508573870414750703, guid: b3763bd9e029563449216841d03dc674, type: 3}
   - id: Explorer
     name: Explorer
     desc: Discovered new lands.
     karma: 2
+    icon: {fileID: -3206997177501537110, guid: b3763bd9e029563449216841d03dc674, type: 3}
   - id: Scholar of Magic
     name: Scholar of Magic
     desc: Discovered new spells.
     karma: 1
+    icon: {fileID: 1332376160639315640, guid: b3763bd9e029563449216841d03dc674, type: 3}
   - id: Impoverished
     name: Impoverished
     desc: Lived with hardly a penny to their name.
     karma: 1
+    icon: {fileID: 2151551229689407135, guid: b3763bd9e029563449216841d03dc674, type: 3}
   - id: Wealthy
     name: Wealthy
     desc: Lived a luxurious life.
     karma: -1
+    icon: {fileID: 8598312025504288491, guid: b3763bd9e029563449216841d03dc674, type: 3}
   - id: Warlord
     name: Warlord
     desc: Slaughtered thousands of their enemies on the battlefield.
     karma: -2
+    icon: {fileID: 5625080229924066796, guid: b3763bd9e029563449216841d03dc674, type: 3}
   - id: Traitor
     name: Traitor
     desc: Betrayed the people that trusted them.
     karma: -2
+    icon: {fileID: 1850846061140127532, guid: b3763bd9e029563449216841d03dc674, type: 3}
   deaths:
   - id: Old Age
     name: Old Age
