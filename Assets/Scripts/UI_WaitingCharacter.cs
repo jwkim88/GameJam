@@ -8,10 +8,14 @@ using TMPro;
 
 public class UI_WaitingCharacter : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
+    public bool ShouldFade
+    {
+        get { return cd.Faded; }
+    }
 
     public int slotIndex;
     private UI_WaitingRoomPanel panel;
-    private CharacterData cd;
+    public CharacterData cd;
     private RectTransform rect;
     private Animator animator;
 
@@ -86,6 +90,17 @@ public class UI_WaitingCharacter : MonoBehaviour, IPointerClickHandler, IPointer
         yield return new WaitForSeconds(0.75f);
         SetParent(rect);
         this.animator.Play("Show");
+    }
+
+    public void FadeAway()
+    {
+        StartCoroutine(FadeAnimation());
+    }
+    IEnumerator FadeAnimation()
+    {
+        this.animator.Play("Hide");
+        yield return new WaitForSeconds(0.75f);
+        Destroy(gameObject);
     }
 
 }

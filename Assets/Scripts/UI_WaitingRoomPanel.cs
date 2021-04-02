@@ -46,8 +46,13 @@ public class UI_WaitingRoomPanel : MonoBehaviour
     {
         for(int i = 0; i < characters.Count; i++)
         {
+            if (characters[i] == null) continue;
             characters[i].UpdateFade();
             characters[i].UpdateTimeText();
+            if (characters[i].ShouldFade)
+            {
+                characters[i].FadeAway();
+            }
         }
     }
 
@@ -62,14 +67,14 @@ public class UI_WaitingRoomPanel : MonoBehaviour
     public void OnCharacterSentToHeaven()
     {
         if (activeCharacter == null) return;
-        activeCharacter.gameObject.SetActive(false);
+        Destroy(activeCharacter.gameObject);
         activeCharacter = null;
     }
 
     public void OnCharacterSentToHell()
     {
         if (activeCharacter == null) return;
-        activeCharacter.gameObject.SetActive(false);
+        Destroy(activeCharacter.gameObject);
         activeCharacter = null;
     }
 
@@ -79,6 +84,15 @@ public class UI_WaitingRoomPanel : MonoBehaviour
         activeCharacter.Reappear(waitingRoomSlots[activeCharacter.slotIndex]);
         
         activeCharacter = null;
+    }
+
+    public void PurgeFadedSouls()
+    {
+        bool shouldFade = false;
+        for(int i = 0; i < characters.Count; i++)
+        {
+            
+        }
     }
 
     
