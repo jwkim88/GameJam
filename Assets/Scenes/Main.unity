@@ -235,8 +235,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.4039, y: 19.934814}
-  m_SizeDelta: {x: 850, y: 500}
+  m_AnchoredPosition: {x: 4.4039, y: -45.028}
+  m_SizeDelta: {x: 850, y: 370.08}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &163348785
 MonoBehaviour:
@@ -3802,6 +3802,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ae2c596c56116c42be9721b2e1c11d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  karmaGain: {fileID: 705903162612705029, guid: b3763bd9e029563449216841d03dc674,
+    type: 3}
+  karmaLoss: {fileID: 6876083950498663687, guid: b3763bd9e029563449216841d03dc674,
+    type: 3}
+  timePass: {fileID: 4863307262193656046, guid: b3763bd9e029563449216841d03dc674,
+    type: 3}
+  sentToHeaven: {fileID: -2420848857863052806, guid: b3763bd9e029563449216841d03dc674,
+    type: 3}
+  sentToHell: {fileID: 2675782666733214075, guid: b3763bd9e029563449216841d03dc674,
+    type: 3}
+  icon: {fileID: 2110602677}
   descText: {fileID: 163348785}
 --- !u!223 &1582481893
 Canvas:
@@ -5353,7 +5364,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2110602676
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5370,8 +5381,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 238}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 0, y: 332.01}
+  m_SizeDelta: {x: 256, y: 384}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2110602677
 MonoBehaviour:
@@ -5393,7 +5404,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -2420848857863052806, guid: b3763bd9e029563449216841d03dc674,
+    type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

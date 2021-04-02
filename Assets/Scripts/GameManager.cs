@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public enum Outcome { KarmaGain, KarmaLoss, Disappear}
+
     [SerializeField] protected CharacterManager cm;
     [SerializeField] protected UI_OfficePanel officePanel;
     [SerializeField] protected UI_CharacterPanel characterPanel;
@@ -45,6 +47,8 @@ public class GameManager : MonoBehaviour
         cm.IncrementTime(100);
 
 
+      
+
         List<CharacterData> fadedSouls = cm.characters.FindAll(c => c.Faded);
         bool soulsHaveFaded = fadedSouls.Count > 0;
         karmicBalance -= fadedSouls.Count * 5;
@@ -52,32 +56,38 @@ public class GameManager : MonoBehaviour
 
         string judgmentText = "";
 
-        string eventText = "Another century passes.";
         string fadedText = "\n\nA few ancient souls have lost all hope, \nfading to dust. \n\nYour failure to judge them upsets the karmic balance.";
-        string correctChoiceText = "\n\nYour judgment of " + cd.name + " was just,\nrestoring the karmic balance.";
-        string wrongChoiceText = "\n\nYour judgment of " + cd.name + " was unjust,\nupsetting the karmic balance.";
-        string endText = "\n\nRestless souls await your judgment, \neager to be released from eternal ennui...";
+        string correctChoiceText = "Your judgment of " + cd.name + " was found to be just,restoring the karmic balance.";
+        string wrongChoiceText = "Your judgment of " + cd.name + " was found to be unjust,upsetting the karmic balance.";
+        string endText = "\n\nAll those who remain await your judgment, so that they may be released from eternal ennui...";
         
         switch(cd.destination)
         {
             case Destination.Heaven: 
-                judgmentText = "You send " + cd.name + " to Heaven,\nto live in bliss for all eternity.";
-                judgmentText += cd.correctChoiceMade ? correctChoiceText : wrongChoiceText;
+                judgmentText = "You sent " + cd.name + " to Heaven, to live in bliss for all eternity.";
+
                 break;
             case Destination.Hell: 
-                judgmentText = "You send " + cd.name + " to Hell,\ndamning them to eternal torment.";
-                judgmentText += cd.correctChoiceMade ? correctChoiceText : wrongChoiceText;
+                judgmentText = "You sent " + cd.name + " to Hell, damning them to eternal torment.";
+
                 break;
             case Destination.Purgatory: 
-                judgmentText = "You keep " + cd.name + " in Purgatory, \nasking them to reflect upon their deeds in life." ; 
+                judgmentText = "You kept " + cd.name + " in Purgatory, asking them to reflect upon their deeds in life." ; 
                 break;
         }
 
-     
-        if (soulsHaveFaded) eventText += fadedText;
-        else eventText += endText;
+        judgmentText += "\nAnd so another century passes.";
 
-        eventPanel.Show(judgmentText, eventText);
+
+        string outcomeText = cd.correctChoiceMade ? correctChoiceText : wrongChoiceText;
+
+        if (soulsHaveFaded) outcomeText += fadedText;
+        else outcomeText += endText;
+
+
+        Outcome outcome = cd.correctChoiceMade ? Outcome.KarmaGain : Outcome.KarmaLoss;
+        
+        eventPanel.Show(judgmentText, outcomeText, cd.destination, outcome);
 
         cm.RemoveDepartedCharacters();
         cm.GenerateCharacters();
