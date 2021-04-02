@@ -30,6 +30,11 @@ public class GameManager : MonoBehaviour
         officePanel.SetHellAvailability(hellAvailability);
     }
 
+    public void OnGameStart()
+    {
+        // show tutorial maybe?
+    }
+
     void UpdateUI()
     {
         officePanel.UpdateYear(year);
