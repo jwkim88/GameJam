@@ -322,6 +322,8 @@ GameObject:
   m_Component:
   - component: {fileID: 256476977}
   - component: {fileID: 256476978}
+  - component: {fileID: 256476980}
+  - component: {fileID: 256476979}
   m_Layer: 5
   m_Name: Office
   m_TagString: Untagged
@@ -382,6 +384,39 @@ MonoBehaviour:
   heavenButton: {fileID: 1574135180}
   hellButton: {fileID: 1917305705}
   karmaCrystal: {fileID: 421354164}
+--- !u!225 &256476979
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 256476976}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!223 &256476980
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 256476976}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 25
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!1 &257302403
 GameObject:
   m_ObjectHideFlags: 0
@@ -3291,6 +3326,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1721091706}
   - component: {fileID: 1721091707}
+  - component: {fileID: 1721091709}
+  - component: {fileID: 1721091708}
   m_Layer: 5
   m_Name: Character Panel
   m_TagString: Untagged
@@ -3341,6 +3378,39 @@ MonoBehaviour:
   deedObjects:
   - {fileID: 427965477}
   - {fileID: 1215523444}
+--- !u!225 &1721091708
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1721091705}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!223 &1721091709
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1721091705}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 25
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!1 &1723225656
 GameObject:
   m_ObjectHideFlags: 0
@@ -3540,6 +3610,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1749631725}
   - component: {fileID: 1749631726}
+  - component: {fileID: 1749631728}
+  - component: {fileID: 1749631727}
   m_Layer: 5
   m_Name: Waiting Room
   m_TagString: Untagged
@@ -3599,6 +3671,39 @@ MonoBehaviour:
   - {fileID: 1931099428}
   - {fileID: 1905362569}
   judgmentSlot: {fileID: 189486502}
+--- !u!225 &1749631727
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1749631724}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!223 &1749631728
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1749631724}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!1 &1905362568
 GameObject:
   m_ObjectHideFlags: 0

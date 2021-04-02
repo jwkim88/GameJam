@@ -12,9 +12,10 @@ public class UI_WaitingCharacter : MonoBehaviour, IPointerClickHandler, IPointer
     public int slotIndex;
     private UI_WaitingRoomPanel panel;
     private CharacterData cd;
-    private Image image;
     private RectTransform rect;
-    
+    private Animator animator;
+
+    [SerializeField] private Image image;
     [SerializeField] TextMeshProUGUI nameText;
     [SerializeField] TextMeshProUGUI yearsText;
     [SerializeField] AnimationCurve fadeCurve;
@@ -22,9 +23,10 @@ public class UI_WaitingCharacter : MonoBehaviour, IPointerClickHandler, IPointer
     {
         this.panel = panel;
         this.rect = GetComponent<RectTransform>();
-        this.image = GetComponent<Image>();
+        this.animator = GetComponent<Animator>();
         this.nameText.enabled = false;
         this.yearsText.enabled = false;
+        
     }
     public void AssignCharacter(CharacterData cd, int slotIndex)
     {
@@ -34,6 +36,7 @@ public class UI_WaitingCharacter : MonoBehaviour, IPointerClickHandler, IPointer
         this.image.sprite = cd.waitingRoomSprite;
         this.image.SetNativeSize();
         this.image.rectTransform.sizeDelta = new Vector2(cd.waitingRoomSprite.rect.width, cd.waitingRoomSprite.rect.height) * 0.5f;
+        this.animator.Play("Idle", 0, Random.Range(0, 1f));
     }
 
     public void OnPointerClick(PointerEventData data)
