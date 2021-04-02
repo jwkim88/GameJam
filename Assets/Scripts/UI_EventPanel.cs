@@ -7,29 +7,64 @@ public class UI_EventPanel : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI descText;
     Animator animator;
-    Coroutine hideCoroutine;
+    Coroutine showTextCoroutine;
     private void Awake()
     {
         animator = GetComponent<Animator>();
     }
 
-    public void Show(string text)
+    public void Show(string text, string text2)
     {
         descText.text = text;
         animator.SetBool("Show", true);
-        if (hideCoroutine != null) StopCoroutine(hideCoroutine);
-        hideCoroutine = StartCoroutine(HideAfterDelay());
+        if (showTextCoroutine != null) StopCoroutine(showTextCoroutine);
+        showTextCoroutine = StartCoroutine(ShowText(text, text2));
     }
 
     public void OnInputReceived()
     {
-        if (hideCoroutine != null) StopCoroutine(hideCoroutine);
+        if (showTextCoroutine != null) StopCoroutine(showTextCoroutine);
         Hide();
     }
 
-    IEnumerator HideAfterDelay()
+    IEnumerator ShowText(string text, string text2)
     {
-        yield return new WaitForSeconds(10f);
+        float time = 0;
+        float fadeDuration = 1f;
+        float normalizedTime = 0;
+        descText.text = text;
+        while(time < fadeDuration)
+        {
+            time += Time.deltaTime;
+            normalizedTime = time / fadeDuration;
+            descText.color = Color.Lerp(new Color(1, 1, 1, 0), Color.white, normalizedTime);
+            yield return null;
+        }
+        yield return new WaitForSeconds(5f);
+        while (time > 0)
+        {
+            time -= Time.deltaTime;
+            normalizedTime = time / fadeDuration;
+            descText.color = Color.Lerp(new Color(1, 1, 1, 0), Color.white, normalizedTime);
+            yield return null;
+        }
+
+        descText.text = text2;
+        while (time < fadeDuration)
+        {
+            time += Time.deltaTime;
+            normalizedTime = time / fadeDuration;
+            descText.color = Color.Lerp(new Color(1, 1, 1, 0), Color.white, normalizedTime);
+            yield return null;
+        }
+        yield return new WaitForSeconds(5f);
+        while (time > 0)
+        {
+            time -= Time.deltaTime;
+            normalizedTime = time / fadeDuration;
+            descText.color = Color.Lerp(new Color(1, 1, 1, 0), Color.white, normalizedTime);
+            yield return null;
+        }
         Hide();
     }
 

@@ -12,6 +12,8 @@ public class CharacterData
     public List<string> deeds = new List<string>();
     public Sprite sprite;
     public Sprite waitingRoomSprite;
+    public Destination destination;
+    public bool correctChoiceMade;
 
     public bool Faded
     {
@@ -20,3 +22,4 @@ public class CharacterData
 }
 
 public enum Gender { Male, Female}
+public enum Destination { Purgatory, Heaven, Hell}

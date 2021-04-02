@@ -14,7 +14,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] protected int heavenAvailability = 3;
     [SerializeField] protected int hellAvailability = 3;
     [SerializeField] protected int karmicBalance = 5;
-    protected bool correctChoiceMade;
+
+
     CharacterData cd;
     // Start is called before the first frame update
 
@@ -45,27 +46,38 @@ public class GameManager : MonoBehaviour
 
         List<CharacterData> fadedSouls = cm.characters.FindAll(c => c.Faded);
         bool soulsHaveFaded = fadedSouls.Count > 0;
-        
+
+        string judgmentText = "";
+
         string eventText = "Another century passes.";
         string fadedText = "\n\nA few ancient souls have lost all hope, fading to dust. \nYour failure to judge them upsets the karmic balance.";
         string correctChoiceText = "\n\nYour judgment of " + cd.name + " was just,\nrestoring the karmic balance.";
         string wrongChoiceText = "\n\nYour judgment of " + cd.name + " was unjust,\nupsetting the karmic balance.";
         string endText = "\n\nRestless souls await your judgment, \neager to be released from eternal ennui...";
+        
+        switch(cd.destination)
+        {
+            case Destination.Heaven: judgmentText = "You send " + cd.name + " to Heaven, to live in bliss for all eternity."; break;
+            case Destination.Hell: judgmentText = "You send " + cd.name + " to Hell, damning them to eternal torment."; break;
+            //case Destination.Purgatory: judgmentText = "You keep " + cd.name + " in Purgatory, asking them to reflect upon their life" +
+            //        "\nto come to a better understanding of their own soul."; break;
+        }
 
-        eventText += correctChoiceMade ? correctChoiceText : wrongChoiceText;
+        judgmentText += cd.correctChoiceMade ? correctChoiceText : wrongChoiceText;
         if (soulsHaveFaded) eventText += fadedText;
         else eventText += endText;
 
-        eventPanel.Show( eventText);
+        eventPanel.Show(judgmentText, eventText);
     }
 
     public void OnHeavenSelected()
     {
         if (cd == null) return;
+        cd.destination = Destination.Heaven;
         heavenAvailability--;
         officePanel.MoveHeavenBead();
-        correctChoiceMade = IsCharacterRighteous(cd) == true;
-        OnKarmicBalanceChanged(cd, correctChoiceMade);
+        cd.correctChoiceMade = IsCharacterRighteous(cd) == true;
+        OnKarmicBalanceChanged(cd, cd.correctChoiceMade);
         OnCharacterInteractionFinished();
         waitingRoomPanel.OnCharacterSentToHeaven();
     }
@@ -73,6 +85,7 @@ public class GameManager : MonoBehaviour
     public void OnPurgatorySelected()
     {
         if (cd == null) return;
+        cd.destination = Destination.Purgatory;
         OnCharacterInteractionFinished();
         waitingRoomPanel.OnCharacterReturnedToPurgatory();
     }
@@ -80,10 +93,11 @@ public class GameManager : MonoBehaviour
     public void OnHellSelected()
     {
         if (cd == null) return;
+        cd.destination = Destination.Hell;
         hellAvailability--;
         officePanel.MoveHellBead();
-        correctChoiceMade = IsCharacterRighteous(cd) == false;
-        OnKarmicBalanceChanged(cd, correctChoiceMade);
+        cd.correctChoiceMade = IsCharacterRighteous(cd) == false;
+        OnKarmicBalanceChanged(cd, cd.correctChoiceMade);
         OnCharacterInteractionFinished();
         waitingRoomPanel.OnCharacterSentToHell();
     }
