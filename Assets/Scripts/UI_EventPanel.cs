@@ -8,9 +8,13 @@ public class UI_EventPanel : MonoBehaviour
     [SerializeField] TextMeshProUGUI descText;
     Animator animator;
     Coroutine showTextCoroutine;
+    Color textBaseColor;
+    Color textBaseColorTransparent;
     private void Awake()
     {
         animator = GetComponent<Animator>();
+        textBaseColor = descText.color;
+        textBaseColorTransparent = new Color(textBaseColor.r, textBaseColor.g, textBaseColor.b, 0);
     }
 
     public void Show(string text, string text2)
@@ -37,7 +41,7 @@ public class UI_EventPanel : MonoBehaviour
         {
             time += Time.deltaTime;
             normalizedTime = time / fadeDuration;
-            descText.color = Color.Lerp(new Color(1, 1, 1, 0), Color.white, normalizedTime);
+            descText.color = Color.Lerp(textBaseColorTransparent, textBaseColor, normalizedTime);
             yield return null;
         }
         yield return new WaitForSeconds(5f);
@@ -45,7 +49,7 @@ public class UI_EventPanel : MonoBehaviour
         {
             time -= Time.deltaTime;
             normalizedTime = time / fadeDuration;
-            descText.color = Color.Lerp(new Color(1, 1, 1, 0), Color.white, normalizedTime);
+            descText.color = Color.Lerp(textBaseColorTransparent, textBaseColor, normalizedTime);
             yield return null;
         }
 
@@ -54,7 +58,7 @@ public class UI_EventPanel : MonoBehaviour
         {
             time += Time.deltaTime;
             normalizedTime = time / fadeDuration;
-            descText.color = Color.Lerp(new Color(1, 1, 1, 0), Color.white, normalizedTime);
+            descText.color = Color.Lerp(textBaseColorTransparent, textBaseColor, normalizedTime);
             yield return null;
         }
         yield return new WaitForSeconds(5f);
@@ -62,7 +66,7 @@ public class UI_EventPanel : MonoBehaviour
         {
             time -= Time.deltaTime;
             normalizedTime = time / fadeDuration;
-            descText.color = Color.Lerp(new Color(1, 1, 1, 0), Color.white, normalizedTime);
+            descText.color = Color.Lerp(textBaseColorTransparent, textBaseColor, normalizedTime);
             yield return null;
         }
         Hide();
