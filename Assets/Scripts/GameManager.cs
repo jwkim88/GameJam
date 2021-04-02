@@ -48,8 +48,8 @@ public class GameManager : MonoBehaviour
         
         string eventText = "Another century passes.";
         string fadedText = "\n\nA few ancient souls have lost all hope, fading to dust. \nYour failure to judge them upsets the karmic balance.";
-        string correctChoiceText = "\n\nYour judgment of " + cd.name + " was just, restoring the karmic balance.";
-        string wrongChoiceText = "\n\nYour judgment of " + cd.name + " was unjust, upsetting the karmic balance.";
+        string correctChoiceText = "\n\nYour judgment of " + cd.name + " was just,\nrestoring the karmic balance.";
+        string wrongChoiceText = "\n\nYour judgment of " + cd.name + " was unjust,\nupsetting the karmic balance.";
         string endText = "\n\nRestless souls await your judgment, \neager to be released from eternal ennui...";
 
         eventText += correctChoiceMade ? correctChoiceText : wrongChoiceText;
