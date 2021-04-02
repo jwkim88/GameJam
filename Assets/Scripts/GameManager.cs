@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] protected UI_OfficePanel officePanel;
     [SerializeField] protected UI_CharacterPanel characterPanel;
     [SerializeField] protected UI_WaitingRoomPanel waitingRoomPanel;
+    [SerializeField] protected UI_EventPanel eventPanel;
     [SerializeField] protected int year = 2000;
     [SerializeField] protected int yearIncrement = 100;
     [SerializeField] protected int heavenAvailability = 3;
@@ -41,6 +42,7 @@ public class GameManager : MonoBehaviour
     {
         year += 100;
         cm.IncrementTime(100);
+        eventPanel.Show("Another century passes. \n\nRestless souls await you once more, eager for their release...");
     }
 
     public void OnHeavenSelected()
