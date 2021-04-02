@@ -15,7 +15,7 @@ public class UI_CharacterPanel : MonoBehaviour
     public void ShowCharacter(CharacterData cd)
     {
         portrait.sprite = cd.sprite;
-        portrait.SetNativeSize();
+        portrait.rectTransform.sizeDelta = new Vector2(cd.sprite.rect.width, cd.sprite.rect.height) * 0.5f;
         portrait.enabled = true;
         nameText.text = cd.name;
         Debug.Log("Searching for " + cd.death);
