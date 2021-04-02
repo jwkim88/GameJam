@@ -11,12 +11,15 @@ public class UI_DeedObject : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     [SerializeField] RectTransform hoverTextParent;
     [SerializeField] TextMeshProUGUI titleText;
     [SerializeField] TextMeshProUGUI bodyText;
+    [SerializeField] Image icon;
 
     public void AssignDeedData(DeedData dd)
     {
         this.deedData = dd;
         this.titleText.text = dd.name;
         this.bodyText.text = dd.desc;
+        this.icon.sprite = dd.icon;
+        this.icon.SetNativeSize();
     }
     public void OnPointerEnter(PointerEventData data)
     {

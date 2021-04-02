@@ -5656,6 +5656,12 @@ PrefabInstance:
       propertyPath: waitingRoomPanel
       value: 
       objectReference: {fileID: 1749631726}
+    - target: {fileID: 3232551794376143260, guid: 9b941439ed61dda458a41b47d6f1b413,
+        type: 3}
+      propertyPath: deeds.Array.data[1].icon
+      value: 
+      objectReference: {fileID: -2818288544997800520, guid: b3763bd9e029563449216841d03dc674,
+        type: 3}
     - target: {fileID: 3232551794376143261, guid: 9b941439ed61dda458a41b47d6f1b413,
         type: 3}
       propertyPath: m_Name

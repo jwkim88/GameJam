@@ -9,4 +9,5 @@ public class DeedData
     public string name;
     public string desc;
     public int karma;
+    public Sprite icon;
 }
