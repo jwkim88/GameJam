@@ -25,35 +25,35 @@ public class UI_EventPanel : MonoBehaviour
         showTextCoroutine = StartCoroutine(ShowText(text, text2));
     }
 
+    bool inputReceived = false;
     public void OnInputReceived()
     {
-        if (showTextCoroutine != null) StopCoroutine(showTextCoroutine);
-        Hide();
+        inputReceived = true;
     }
 
     IEnumerator ShowText(string text, string text2)
     {
+        
+        descText.text = text;
+        yield return StartCoroutine(TextFadeIn());
+        yield return StartCoroutine(TextDisplayDelay());
+        yield return StartCoroutine(TextFadeOut());
+
+        descText.text = text2;
+        yield return StartCoroutine(TextFadeIn());
+
+        yield return StartCoroutine(TextDisplayDelay());
+        yield return StartCoroutine(TextFadeOut());
+        Hide();
+    }
+
+    IEnumerator TextFadeIn()
+    {
+        inputReceived = false;
         float time = 0;
         float fadeDuration = 1f;
         float normalizedTime = 0;
-        descText.text = text;
-        while(time < fadeDuration)
-        {
-            time += Time.deltaTime;
-            normalizedTime = time / fadeDuration;
-            descText.color = Color.Lerp(textBaseColorTransparent, textBaseColor, normalizedTime);
-            yield return null;
-        }
-        yield return new WaitForSeconds(5f);
-        while (time > 0)
-        {
-            time -= Time.deltaTime;
-            normalizedTime = time / fadeDuration;
-            descText.color = Color.Lerp(textBaseColorTransparent, textBaseColor, normalizedTime);
-            yield return null;
-        }
-
-        descText.text = text2;
+        inputReceived = false;
         while (time < fadeDuration)
         {
             time += Time.deltaTime;
@@ -61,17 +61,37 @@ public class UI_EventPanel : MonoBehaviour
             descText.color = Color.Lerp(textBaseColorTransparent, textBaseColor, normalizedTime);
             yield return null;
         }
-        yield return new WaitForSeconds(5f);
-        while (time > 0)
+    }
+
+    IEnumerator TextFadeOut()
+    {
+        inputReceived = false;
+        float time = 1;
+        float fadeDuration = 1f;
+        float normalizedTime = 0;
+        inputReceived = false;
+        while (time > 0 && !inputReceived)
         {
             time -= Time.deltaTime;
             normalizedTime = time / fadeDuration;
             descText.color = Color.Lerp(textBaseColorTransparent, textBaseColor, normalizedTime);
             yield return null;
         }
-        Hide();
     }
 
+    IEnumerator TextDisplayDelay()
+    {
+        inputReceived = false;
+        float textDisplayTime = 0f;
+        float textDisplayDuration = 5f;
+        textDisplayTime = 0;
+        while (textDisplayTime < textDisplayDuration && !inputReceived)
+        {
+            textDisplayTime += Time.deltaTime;
+            yield return null;
+        }
+
+    }
     public void Hide()
     {
         animator.SetBool("Show", false);
