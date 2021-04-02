@@ -62,8 +62,8 @@ public class GameManager : MonoBehaviour
         string judgmentText = "";
 
         string fadedText = "\n\nA few ancient souls have lost all hope, \nfading to dust. \n\nYour failure to judge them upsets the karmic balance.";
-        string correctChoiceText = "Your judgment of " + cd.name + " was found to be just,restoring the karmic balance.";
-        string wrongChoiceText = "Your judgment of " + cd.name + " was found to be unjust,upsetting the karmic balance.";
+        string correctChoiceText = "Your judgment of " + cd.name + " was found to be just, restoring the karmic balance.";
+        string wrongChoiceText = "Your judgment of " + cd.name + " was found to be unjust, upsetting the karmic balance.";
         string endText = "\n\nAll those who remain await your judgment, so that they may be released from eternal ennui...";
         
         switch(cd.destination)

@@ -12,11 +12,12 @@ public class UI_DeedObject : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     [SerializeField] TextMeshProUGUI titleText;
     [SerializeField] TextMeshProUGUI bodyText;
     [SerializeField] Image icon;
+    [SerializeField] TextMeshProUGUI cardTitleText;
 
     public void AssignDeedData(DeedData dd)
     {
         this.deedData = dd;
-        this.titleText.text = dd.name;
+        this.titleText.text = this.cardTitleText.text = dd.name;
         this.bodyText.text = dd.desc;
         this.icon.sprite = dd.icon;
         this.icon.SetNativeSize();
