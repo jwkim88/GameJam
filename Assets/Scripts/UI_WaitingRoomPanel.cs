@@ -113,7 +113,7 @@ public class UI_WaitingRoomPanel : MonoBehaviour
     IEnumerator ShowAnimationThenDestroyCharacter(string animationName)
     {
         animator.Play(animationName);
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         RemoveActiveCharacter();
     }
     

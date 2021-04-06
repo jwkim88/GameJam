@@ -6,6 +6,7 @@ using TMPro;
 
 public class UI_EventPanel : MonoBehaviour
 {
+    [SerializeField] GameManager gm;
     [SerializeField] Sprite karmaGain;
     [SerializeField] Sprite karmaLoss;
     [SerializeField] Sprite timePass;
@@ -108,7 +109,7 @@ public class UI_EventPanel : MonoBehaviour
     {
         inputReceived = false;
         float textDisplayTime = 0f;
-        float textDisplayDuration = 5f;
+        float textDisplayDuration = 20f;
         textDisplayTime = 0;
         while (textDisplayTime < textDisplayDuration && !inputReceived)
         {
@@ -120,5 +121,10 @@ public class UI_EventPanel : MonoBehaviour
     public void Hide()
     {
         animator.SetBool("Show", false);
+    }
+
+    public void OnHideComplete()
+    {
+        gm.OnEventFinished();
     }
 }

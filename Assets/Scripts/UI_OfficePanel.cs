@@ -16,7 +16,6 @@ public class UI_OfficePanel : MonoBehaviour
     [SerializeField] protected Button heavenButton;
     [SerializeField] protected Button hellButton;
     [SerializeField] protected UI_KarmaCrystal karmaCrystal;
-    
 
     public void UpdateButtonInteractability(bool heavenAvailable, bool hellAvailable)
     {

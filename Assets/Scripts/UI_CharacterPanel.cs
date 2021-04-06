@@ -12,19 +12,29 @@ public class UI_CharacterPanel : MonoBehaviour
     [SerializeField] protected CharacterManager cm;
     [SerializeField] protected RectTransform deathCertificateParent;
     [SerializeField] UI_DeedObject[] deedObjects = new UI_DeedObject[2];
+    Animator animator;
+    [SerializeField] Animator tableItemsAnimator;
+
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
+
     public void ShowCharacter(CharacterData cd)
     {
         portrait.sprite = cd.sprite;
         portrait.rectTransform.sizeDelta = new Vector2(cd.sprite.rect.width, cd.sprite.rect.height) * 0.5f;
-        portrait.enabled = true;
+        //portrait.enabled = true;
         nameText.text = cd.name;
         Debug.Log("Searching for " + cd.death);
         DeathData dd = cm.deaths.Find(d => d.id == cd.death);
         deathText.text = dd.desc;
-        nameText.enabled = true;
-        deathText.enabled = true;
-        deathCertificateParent.gameObject.SetActive(true);
-        UpdateDeedObjects(cd);   
+        //nameText.enabled = true;
+        //deathText.enabled = true;
+        //deathCertificateParent.gameObject.SetActive(true);
+        UpdateDeedObjects(cd);
+        tableItemsAnimator.SetBool("Show", true);
+        animator.SetBool("Show", true);
     }
 
     public void UpdateDeedObjects(CharacterData cd)
@@ -40,11 +50,14 @@ public class UI_CharacterPanel : MonoBehaviour
 
     public void HideCharacter()
     {
-        portrait.enabled = false;
-        deathText.enabled = false;
-        nameText.enabled = false;
-        deathCertificateParent.gameObject.SetActive(false);
+        tableItemsAnimator.SetBool("Show", false);
+        animator.SetBool("Show", false);
+        //portrait.enabled = false;
+        //deathText.enabled = false;
+        //nameText.enabled = false;
+        //deathCertificateParent.gameObject.SetActive(false);
         HideDeeds();
+   
     }
 
     public void HideDeeds()

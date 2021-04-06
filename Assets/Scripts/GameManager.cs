@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public enum Outcome { KarmaGain, KarmaLoss, Disappear}
+    public enum GameState { Selection, Interview, Event}
 
     [SerializeField] protected CharacterManager cm;
     [SerializeField] protected UI_OfficePanel officePanel;
@@ -16,7 +17,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] protected int heavenAvailability = 3;
     [SerializeField] protected int hellAvailability = 3;
     [SerializeField] protected int karmicBalance = 5;
-
+    protected GameState state;
 
     CharacterData cd;
     // Start is called before the first frame update
@@ -28,11 +29,22 @@ public class GameManager : MonoBehaviour
         characterPanel.HideCharacter();
         officePanel.SetHeavenAvailability(heavenAvailability);
         officePanel.SetHellAvailability(hellAvailability);
+        
     }
 
     public void OnGameStart()
     {
-        // show tutorial maybe?
+        SetGameState(GameState.Event);
+        eventPanel.Show("After millenia of human history, both Heaven and Hell are quite full.\n\n " +
+            "And so most souls wait in Purgatory, milling about listlessly, waiting for their final judgment.",
+            "You have been entrusted with the uneviable task of choosing who among them shall leave, and who shall stay.\n\n" +
+            "Take care with your judgment, for the karmic balance of the universe rests on your fingertips.", Destination.Purgatory, Outcome.KarmaGain);
+
+    }
+
+    public void SetGameState(GameState state)
+    {
+        this.state = state;
     }
 
     void UpdateUI()
@@ -81,14 +93,14 @@ public class GameManager : MonoBehaviour
                 break;
         }
 
-        judgmentText += "\nAnd so another century passes.";
+        judgmentText += "\n\nAnd so another century passes.";
 
-
-        string outcomeText = cd.correctChoiceMade ? correctChoiceText : wrongChoiceText;
+        string outcomeText = "Your prudent indecision exasperates those who were have waited for nothing.";
+        
+        if(cd.destination != Destination.Purgatory) outcomeText = cd.correctChoiceMade ? correctChoiceText : wrongChoiceText;
 
         if (soulsHaveFaded) outcomeText += fadedText;
         else outcomeText += endText;
-
 
         Outcome outcome = cd.correctChoiceMade ? Outcome.KarmaGain : Outcome.KarmaLoss;
         
@@ -139,17 +151,23 @@ public class GameManager : MonoBehaviour
         Debug.Log("Character interaction finished!");
     }
 
+    public void OnEventFinished()
+    {
+        SetGameState(GameState.Selection);
+    }
+
     IEnumerator WaitForDepartureAnimation(Destination destination)
     {
-        switch(destination)
+        SetGameState(GameState.Selection);
+        switch (destination)
         {
             case Destination.Heaven:
                 waitingRoomPanel.OnCharacterSentToHeaven();
-                yield return new WaitForSeconds(2f);
+                yield return new WaitForSeconds(1f);
                 break;
             case Destination.Hell:
                 waitingRoomPanel.OnCharacterSentToHell();
-                yield return new WaitForSeconds(2f);
+                yield return new WaitForSeconds(1f);
                 break;
             case Destination.Purgatory:
                 waitingRoomPanel.OnCharacterReturnedToPurgatory();
@@ -160,6 +178,7 @@ public class GameManager : MonoBehaviour
 
     public void OnCharacterSelected(CharacterData cd)
     {
+        SetGameState(GameState.Interview);
         this.cd = cd;
         characterPanel.ShowCharacter(cd);
     }
