@@ -17,7 +17,7 @@ public class CharacterManager : MonoBehaviour
     public void Initialize()
     {
         GenerateCharacters();
-        waitingRoomPanel.Initialize(characters);
+   
     }
 
     public void RemoveDepartedCharacters()
@@ -35,6 +35,7 @@ public class CharacterManager : MonoBehaviour
         {
             GenerateCharacter();
         }
+        waitingRoomPanel.AssignCharacters(characters);
     }
 
     

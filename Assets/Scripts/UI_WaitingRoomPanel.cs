@@ -11,7 +11,7 @@ public class UI_WaitingRoomPanel : MonoBehaviour
     [SerializeField] RectTransform judgmentSlot;
     List<UI_WaitingCharacter> characters = new List<UI_WaitingCharacter>();
     UI_WaitingCharacter activeCharacter;
-    public void Initialize(List<CharacterData> characters)
+    public void AssignCharacters(List<CharacterData> characters)
     {
         for(int i = 0; i < characters.Count; i++)
         {
@@ -26,6 +26,7 @@ public class UI_WaitingRoomPanel : MonoBehaviour
 
     public void AssignCharacter(CharacterData cd)
     {
+        if (characters.Find(c => c.cd == cd)) return;
         UI_WaitingCharacter c = SpawnCharacter();
         c.Initialize(this);
         
@@ -67,15 +68,13 @@ public class UI_WaitingRoomPanel : MonoBehaviour
     public void OnCharacterSentToHeaven()
     {
         if (activeCharacter == null) return;
-        Destroy(activeCharacter.gameObject);
-        activeCharacter = null;
+        RemoveActiveCharacter();
     }
 
     public void OnCharacterSentToHell()
     {
         if (activeCharacter == null) return;
-        Destroy(activeCharacter.gameObject);
-        activeCharacter = null;
+        RemoveActiveCharacter();
     }
 
     public void OnCharacterReturnedToPurgatory()
@@ -83,6 +82,13 @@ public class UI_WaitingRoomPanel : MonoBehaviour
         if (activeCharacter == null) return;
         activeCharacter.Reappear(waitingRoomSlots[activeCharacter.slotIndex]);
         
+        activeCharacter = null;
+    }
+
+    void RemoveActiveCharacter()
+    {
+        characters.Remove(activeCharacter);
+        Destroy(activeCharacter.gameObject);
         activeCharacter = null;
     }
 
