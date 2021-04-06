@@ -106,16 +106,16 @@ public class GameManager : MonoBehaviour
         officePanel.MoveHeavenBead();
         cd.correctChoiceMade = IsCharacterRighteous(cd) == true;
         OnKarmicBalanceChanged(cd, cd.correctChoiceMade);
-        OnCharacterInteractionFinished();
-        waitingRoomPanel.OnCharacterSentToHeaven();
+        StartCoroutine(WaitForDepartureAnimation(Destination.Heaven));
+
     }
 
     public void OnPurgatorySelected()
     {
         if (cd == null) return;
         cd.destination = Destination.Purgatory;
-        OnCharacterInteractionFinished();
-        waitingRoomPanel.OnCharacterReturnedToPurgatory();
+        StartCoroutine(WaitForDepartureAnimation(Destination.Purgatory));
+
     }
 
     public void OnHellSelected()
@@ -126,8 +126,8 @@ public class GameManager : MonoBehaviour
         officePanel.MoveHellBead();
         cd.correctChoiceMade = IsCharacterRighteous(cd) == false;
         OnKarmicBalanceChanged(cd, cd.correctChoiceMade);
-        OnCharacterInteractionFinished();
-        waitingRoomPanel.OnCharacterSentToHell();
+
+        StartCoroutine(WaitForDepartureAnimation(Destination.Hell));
     }
 
     void OnCharacterInteractionFinished()
@@ -136,6 +136,26 @@ public class GameManager : MonoBehaviour
         OnTimePass();
         cd = null;
         UpdateUI();
+        Debug.Log("Character interaction finished!");
+    }
+
+    IEnumerator WaitForDepartureAnimation(Destination destination)
+    {
+        switch(destination)
+        {
+            case Destination.Heaven:
+                waitingRoomPanel.OnCharacterSentToHeaven();
+                yield return new WaitForSeconds(2f);
+                break;
+            case Destination.Hell:
+                waitingRoomPanel.OnCharacterSentToHell();
+                yield return new WaitForSeconds(2f);
+                break;
+            case Destination.Purgatory:
+                waitingRoomPanel.OnCharacterReturnedToPurgatory();
+                break;
+        }
+        OnCharacterInteractionFinished();
     }
 
     public void OnCharacterSelected(CharacterData cd)
