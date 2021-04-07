@@ -2175,7 +2175,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: A game by Jongwoo Kim and Vladmir Mokry
+  m_text: A game by Jongwoo Kim and Vladimir Mokry
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 420b064050a08664e993cc32520a67a1, type: 2}
   m_sharedMaterial: {fileID: 1951427637940292245, guid: 420b064050a08664e993cc32520a67a1,
@@ -6139,7 +6139,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 63}
+  m_AnchoredPosition: {x: 0, y: 139}
   m_SizeDelta: {x: 1284, y: 220}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1999965969
